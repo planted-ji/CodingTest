@@ -13,22 +13,25 @@ function solution(num1, num2) {
 // 분수의 덧셈
 function solution(numer1, denom1, numer2, denom2) {
     const answer = [];
-    let hap_numer = numer1 * denom2 + numer2 * denom1;
-    let hap_denom = denom1 * denom2;
+    const hapNumer = numer1 * denom2 + numer2 * denom1
+    const hapDenom = denom1 * denom2
     
-    if (denom1 == denom2) {
-        hap_denom = denom1;
-        hap_numer = numer1 + numer2;
+    let minNumber;
+    if(hapNumer < hapDenom) {
+        minNumber = hapNumer;
     } else {
-        if(denom2 % denom1 == 0) {
-            hap_denom = (denom2 / denom1) * denom1;
-            hap_numer = (denom2 / denom1) * numer1 + numer2;
-        } else {
-            hap_denom = denom1 * denom2;
-            hap_numer = (denom1 * numer2) + (denom2 * numer1);
-        }
-        return [hap_numer, hap_denom];
+        minNumber = hapDenom;
     }
+    
+    while(true){
+        if(hapNumer % minNumber === 0) {
+            if(hapDenom % minNumber === 0) {
+                return [hapNumer / minNumber, hapDenom / minNumber]
+            }
+        }
+        minNumber = minNumber - 1;
+    }
+    return answer;
 }
 
 // 1. 분모 덧셈
