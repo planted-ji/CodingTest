@@ -30,3 +30,9 @@ function solution(numer1, denom1, numer2, denom2) {
 
   return [numerValue, denomValue];
 }
+
+// * 배열 두 배 만들기
+function solution(numbers) {
+  const answer = numbers.map((num) => num * 2);
+  return answer;
+}
