@@ -20,8 +20,8 @@ function minNumber(a, b) {
 }
 
 function solution(numer1, denom1, numer2, denom2) {
-    const hapNumer = numer1 * denom2 + numer2 * denom1
-    const hapDenom = denom1 * denom2
+  const hapNumer = numer1 * denom2 + numer2 * denom1
+  const hapDenom = denom1 * denom2
 
   // 분자분모의 최대공약수로 나누기
   const minValue = minNumber(hapNumer, hapDenom);
